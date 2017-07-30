@@ -8,8 +8,10 @@
     <span><%= t ".discover" %></span>
     <div class="search-promo">
       <div class="input-group">
-        <input type="text" class="form-control" aria-label="..."
-          placeholder="<%= t '.search_form' %>">
+        <%= form_tag tracks_path, method: :get do%>
+        <%=text_field_tag :search, params[:search], class: "form-control", aria_label: "...",
+        placeholder: "Search for tracks or artists"%>
+        <% end %>
         <div class="input-group-btn btn-promo-search">
           <button type="button" class="btn btn-success">
             <%= t ".search" %></button>

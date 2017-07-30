@@ -16,4 +16,6 @@ class Track < ApplicationRecord
   validates :user_id, presence: true, allow_nil: true
   validates :genre, presence: true
   validates :image, presence: true, allow_nil: true
+
+  scope :search, ->search{where "title LIKE ?", "%#{search}%"}
 end

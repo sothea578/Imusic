@@ -1,0 +1,7 @@
+<% provide :title, "All track" %>
+<div class="col-md-8 col-md-offset-2">
+  <% @tracks.each do |track| %>
+    <strong><%= link_to track.title %></strong></br>
+    <strong><%= link_to track.song %></strong>
+  <% end %>
+</div>

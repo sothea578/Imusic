@@ -1,6 +1,16 @@
 class TracksController < ApplicationController
   attr_reader :track
 
+  def index
+    if params[:search]
+      @tracks = Track.search(params[:search]).select(:id, :title, :song,
+        :user_id, :genre, :description, :image)
+    else
+      @tracks = Track.select(:id, :title, :song, :user_id,
+        :genre, :description, :image)
+    end
+  end
+
   def new
     @track ||= Track.new
   end

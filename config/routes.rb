@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get "/pages/:page" => "pages#show"
 
-  resources :tracks, only: [:new, :create]
+  resources :tracks, only: [:index, :new, :create]
 end
